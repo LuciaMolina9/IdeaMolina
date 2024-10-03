@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1 id="asd">Pruebas Dom</h1>
+<!--
+    <button id="bota">bota</button>
+    <button id="zapa">zapa</button>
+    <button id="sanda">sanda</button>
+-->
+<form action="#" id="formulario">
+    <label>Seleccione su par</label>
+        <select name="tipo" id="tipo">
+            <option value="bota">Bota</option>
+            <option value="zapa">zapa</option>
+            <option value="sanda">sanda</option>
+        </select>
+
+        <select name="talle" id="talle">
+            <option value="36">36</option>
+            <option value="37">37</option>
+            <option value="38">38</option>
+            <option value="39">39</option>
+            <option value="40">40</option>
+        </select>
+
+        <select name="color" id="color">
+            <option value="negro">Negro</option>
+            <option value="suela">Suela</option>
+            <option value="rojo">Rojo</option>
+        </select>
+    <input type="submit" value="Enviar" />
+</form>
+
+     
+    <table>
+        <thead>
+            <th scope="col">ARTICULO</th>
+            <th scope="col">TALLE</th>
+            <th scope="col">COLOR</th>
+            <th scope="col">ELIMINAR</th>
+        </thead>
+        <tbody id="tablaCarrito">
+        </tbody>
+
+    </table>
+
+<!---    <script src="./js/dom.js"></script> -->
+    <script src="./js/tienda3.js"></script>
+</body>
+</html>
