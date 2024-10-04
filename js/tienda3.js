@@ -42,13 +42,8 @@ function validacion(e) {
     idProd++;
 }
 
-
-
-
-
-
 //Eliminar carrito, compra finalizada
-
+//pendiente de agregado, la idea es usar clear
 
 //constructor de productos desde datos del formulario
 class productos {
@@ -94,6 +89,9 @@ function eliminarProducto(e) {
         renderizar();
 }
 
+/*Tengo un problema con la eliminacion. la idea era que cada producto en el carrito tenga un id, y cada boton de eliminar tambien. 
+Que al tocar un boton, filtre por mismo id. Pero no puedo hacerlo funcionar. Queda pendiente de mejora
+*/
 
 //Programa
 traerCarrito();
