@@ -1,21 +1,30 @@
 //variables y constantes
 let carrito = [];
 let carritoFiltrado = [];
-let carritoGuardado = JSON.stringify(carrito);
+let carritoGuardado = [];
 let prodSel = {};
 let tablaCarrito = document.getElementById("tablaCarrito");
 let idProd = 1
 let eliminarId = 0
 let eliminado = 0
 
-//Recuperacion del Local Storage previo a comenzar
-localStorage.getItem('carritoGuardado')
 
+//Local Storage
+//Recuperacion
+function traerCarrito() {
+    carritoGuardado = localStorage.getItem("carrito");
+    carrito = JSON.parse(carritoGuardado);
+    console.log(carrito);
+    renderizar();
+}
+
+//Subida al carrito
+function subirCarrito() {
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+}
 
 //funciones
 //Toma de datos del formulario
-let miFormulario = document.getElementById("formulario");
-miFormulario.addEventListener ("submit", validacion);
 
 function validacion(e) {
     e.preventDefault ();
@@ -29,9 +38,16 @@ function validacion(e) {
     carrito.push(prodSel);
     console.log(carrito);
     renderizar();
-    localStorage.setItem('carrito', carritoGuardado)
+    subirCarrito ();
     idProd++;
 }
+
+
+
+
+
+
+//Eliminar carrito, compra finalizada
 
 
 //constructor de productos desde datos del formulario
@@ -73,29 +89,14 @@ function eliminarProducto(e) {
         carritoFiltrado = carrito.filter((productos) => productos.id != eliminado);
         console.log("se elimina "+ eliminado); 
         carrito = carritoFiltrado;
+        subirCarrito();
         console.log(carrito);
         renderizar();
 }
 
 
-//creacion del carrito en storage
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//almacenamiento de carrito
-
+//Programa
+traerCarrito();
+let miFormulario = document.getElementById("formulario");
+miFormulario.addEventListener ("submit", validacion);
 
